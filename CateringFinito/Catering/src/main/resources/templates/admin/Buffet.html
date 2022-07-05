@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Catering</title>
+<link href="/css/BuffetAdmin.css" rel="stylesheet" type="text/css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+</head>
+<body>
+  <h1>Informazioni sul buffet</h1>
+	<div id = "tutto">
+		<div id = "buffet" th:if="${buffet}" th:object="${buffet}">
+			<h2 th:text="*{nome}">Nome</h2>
+			Descrizione: <span th:text="*{descrizione}">descrizione </span><br>
+			<span th:if="${buffet.chef!=null}">
+				<p><em>Informazioni dello chef:</em></p>
+				Nome: <span th:text="${buffet.chef.nome}">nome chef</span><br>
+				Cognome: <span th:text="${buffet.chef.cognome}">cognome chef</span><br>
+				Nazionalita: <span th:text="${buffet.chef.nazionalita}">nazionalita chef</span>
+			</span>
+			<p><em>Informazioni dei piatti:</em></p>
+			<span th:each="piatto : ${piatti}">
+				Nome: <span th:text="${piatto.nome}">nome piatto</span><br>
+				Descrizione: <span th:text="${piatto.descrizione}">descrizione piatto</span><br><a class = "button" th:href="@{'/admin/cancellaPiatto' + '/' + ${buffet.id} + '/' + ${piatto.id}}">Elimina</a>
+			</span>
+       </div>
+	   <div id = "impostaChef">
+		<h3>IMPOSTA CHEF:</h3>
+		<div th:each="chef : ${ListaChef}">
+			Nome: <span th:text="${chef.nome}">Nome chef</span><br>
+			Cognome: <span th:text="${chef.cognome}">Cognome chef</span><br>
+			Nazionalita: <span th:text="${chef.nazionalita}">Nazionalita chef</span><br>
+			<span>
+				<a class = "button" th:href="@{'/admin/buffetChef' + '/' + ${buffet.id} + '/' + ${chef.id}}"> Assegna chef</a><br><br>
+			</span>
+		</div>
+	  </div>
+      <div id = "impostaPiatti">
+		<h3>IMPOSTA PIATTI:</h3>
+		<div th:each="piatto : ${ListaPiatti}">
+			Nome: <span th:text="${piatto.nome}">Nome piatto</span><br>
+			Descrizione: <span th:text="${piatto.descrizione}">Descrizione piatto</span><br>
+			<span>
+				<a class = "button" th:href="@{'/admin/buffetPiatto' + '/' + ${buffet.id} + '/' + ${piatto.id}}"> Assegna piatto</a><br><br>
+			</span>
+		</div>
+  	  </div>
+     </div>
+		<div id = "footer_bar">
+			<a th:href="@{/admin/tornaHome}">
+		  		<button type="button">Torna alla home</button></a>
+      </div>
+</body>
+</html>

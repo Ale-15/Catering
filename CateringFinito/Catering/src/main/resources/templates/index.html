@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Catering</title>
+<link href="/css/login.css" rel="stylesheet" type="text/css">
+<style></style>
+<script></script>
+</head>
+<body>
+	<div id=box-background>
+		<div id=box-login>
+			<div id=box-benvenuto>
+				<span class=benvenuto> Benvenuto </span> <img
+					src="https://img.myloview.it/carta-da-parati/line-art-catering-logo-design-vector-template-catering-logo-with-cookingcatering-equipment-spoon-and-fork-icon-tent-icon-table-icon-and-stove-icon-concept-design-700-186719179.jpg"
+					class=logo>
+			</div>
+			<div id=box-checkbox>
+				<span class=accedi> Accedi o Registrati </span>
+
+				<form th:action="@{/login}" method="POST">
+					<div class=checkUser>
+						<input name="username" type="text" placeholder="username" />
+					</div>
+					<div class=checkPassword>
+						<input name="password" type="password" placeholder="password" />
+					</div>
+					<div class=bottoneAccedi>
+						<button type="submit">Accedi</button>
+					</div>
+				</form>
+				<div class=bottoneRegistrati>
+					<a th:href="@{/buttonRegistrazione}">Registrati</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

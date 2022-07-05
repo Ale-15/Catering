@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Catering</title>
+	<link href="/css/Piatto.css" rel="stylesheet" type="text/css">
+	<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+</head>
+<body>
+  <h1>Il piatto</h1>
+    <div id = "tutto">
+        <div id = "piatto" th:if="${piatto}" th:object="${piatto}">
+          <h2><em>Piatto</em></h2>
+          <div id = "divisore"></div>
+            <h3>Nome: <span th:text="*{nome}">nome </span></h3><br>
+            Descrizione:<span th:text="*{descrizione}">descrizione </span>
+           </div>  
+        <div th:unless="${piatto}">Questo piatto non esiste</div>
+    </div>
+    <div id = "footer_bar">
+			<a th:href="@{/tornaHome}">
+		  		Torna alla home</a>
+      </div>
+</body>
+</html>

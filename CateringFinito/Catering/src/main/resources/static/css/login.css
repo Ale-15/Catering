@@ -1,0 +1,93 @@
+body{
+  background-image: url(/images/Sfondo.png);
+  background-size: 47%
+}
+
+#box-background{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 550px;
+}
+
+#box-login{
+  display: flex;
+  height: 300px;
+  width: 500px;
+  justify-content: space-between;
+}
+
+#box-benvenuto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: beige;
+  width: 50%;
+}
+
+.benvenuto{
+  font-size: 50px;
+  font-family: Brush Script MT;
+}
+
+.logo{
+  height: 100px;
+  width: 100px;
+}
+
+#box-checkbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  background: white;
+  width: 50%;
+}
+
+.accedi{
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.checkUser{
+  margin-top: 10px;
+}
+
+.checkPassword{
+  margin-top: 5px;
+}
+
+.bottoneAccedi{
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  padding-top: 20px;
+  padding-bottom: -20px;
+}
+
+button{
+  transition-duration: 0.5s;
+  border: 3px solid beige;
+  color: black;
+}
+
+button:hover{
+  background-color: beige;
+}
+
+.bottoneRegistrati{
+  padding-top: -30px;
+}
+
+a{
+  transition-duration: 0.5s;
+  text-decoration: none;
+  border: 3px solid beige;
+  color: black;
+}
+
+a:hover{
+  background-color: beige;
+}

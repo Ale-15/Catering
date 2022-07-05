@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Catering</title>
+<link href="/css/ingredienteForm.css" rel="stylesheet" type="text/css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+<script></script>
+</head>
+<body>
+  <h2>Inserisci i dati di un ingrediente</h2>
+   <div id = "checkBox">
+	<form th:action="@{/admin/ingrediente}" method="post">
+	  <div id = "box">
+		<div class=boxNome>
+			<span>Nome:</span> <span><input type="text" placeholder="nome" th:field="${ingrediente.nome}"/></span>
+			<span th:if="${#fields.hasErrors('ingrediente.nome')}"
+				th:errors="${ingrediente.nome}"></span>
+		</div>
+		<div class=boxOrigine>
+			<span>Origine:</span><input type="text" placeholder="origine" th:field="${ingrediente.origine}" />
+			<span th:if="${#fields.hasErrors('ingrediente.origine')}"
+				th:errors="${ingrediente.origine}"></span>
+		</div>
+		<div class=boxDesc>
+			<span>Descrizione:</span><input type="text" placeholder="descrizione"
+				th:field="${ingrediente.descrizione}" />
+			<span th:if="${#fields.hasErrors('ingrediente.descrizione')}"
+				th:errors="${ingrediente.descrizione}"></span>
+		</div>
+	  <div id = "bottone">
+		<button type="submit">Aggiungi</button>
+	  </div>
+	 </div>
+	</form>
+  </div>
+  <div id="footer_bar">
+         	<a th:href="@{/admin/tornaHome}">Torna alla home</a>
+    </div>
+</body>
+</html>

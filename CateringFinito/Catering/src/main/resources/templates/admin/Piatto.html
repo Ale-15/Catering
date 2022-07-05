@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Catering</title>
+<link href="/css/PiattoAdmin.css" rel="stylesheet" type="text/css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+</head>
+<body>
+  <h1>Informazioni sul piatto</h1>
+	<div id = "tutto">
+		<div id = "piatto" th:if="${piatto}" th:object="${piatto}">
+			<h2><span th:text="*{nome}">nome </span></h2><br> 
+			<h3>Descrizione:<span th:text="*{descrizione}">descrizione</span></h3>
+		<p><em>Ingredienti:</em></p>
+		<span th:each="ingrediente : ${ingredienti}">
+			Nome: <a class = "link" href="admin/Ingrediente.html" th:href="@{'/admin/ingrediente' + '/' + ${ingrediente.id}}"
+					th:text="${ingrediente.nome}">nome ingrediente</a><br><a class = "button" th:href="@{'/admin/cancellaIngrediente' + '/' + ${piatto.id} + '/' + ${ingrediente.id}}">Elimina</a>
+		</span>
+	</div>
+	<div id = "impostaIngrediente">
+		<h3>AGGIUNGI INGREDIENTE:</h3>
+		<div th:each="ingrediente : ${ListaIngredienti}">
+			Nome: <span th:text="${ingrediente.nome}">Nome ingrediente</span><br>
+			Origine: <span th:text="${ingrediente.origine}">Origine ingrediente</span><br>	
+			Descrizione:<span th:text="${ingrediente.descrizione}">Descrizione ingrediente</span><br>
+		<span>
+			<a class = "button" th:href="@{'/admin/piattoIngrediente' + '/' + ${piatto.id} + '/' + ${ingrediente.id}}">Assegna</a><br><br>
+			</span>
+		</div>
+	  </div>
+	 </div>
+		<div id = "footer_bar">
+			<a th:href="@{/admin/tornaHome}">
+		  		<button type="button">Torna alla home</button></a>
+      </div>
+</body>
+</html>

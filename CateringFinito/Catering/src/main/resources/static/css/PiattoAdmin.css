@@ -1,0 +1,81 @@
+body{
+  background: linear-gradient(to bottom, #ffff66 0%, #ffffcc 100%);
+  background-repeat: no-repeat;
+  height: 530px;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+}
+
+#piatto{
+  border: 3px solid black;
+  text-align:center;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20200730/ourmid/pngtree-orange-summer-gradient-watercolor-background-png-image_376478.jpg");
+  background-size: 100%;
+  width: 300px;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover{
+	text-decoration: underline;
+	text-decoration-color: orange;
+}
+
+#impostaIngrediente{
+  border: 3px solid black;
+  text-align:center;
+  width: 300px;
+  background-image: url("/images/SfondoBuffet.jpg");
+  background-size: 100%;
+}
+
+#tutto{
+  /*border: 5px solid red;*/
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  height: 75%;
+  margin-top: 30px;
+}
+
+.button{
+  transition-duration: 0.5s;
+  text-decoration: underline;
+  text-decoration-color: #ffba00;
+  color: black;
+}
+
+.button:hover{
+  border-top: 2px solid #ffba00;
+}
+
+
+#footer_bar {
+    width: 98%;
+    /* posizionamento in fondo alla pagina */
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+  	background: #ffba00;
+  	float: center;
+	text-align: center;
+}
+
+#footer_bar a {
+	color: white;
+	display: block;
+	font-family: 'Varela Round', sans-serif;
+	padding: 10px 0;
+	text-decoration: none;
+}
+
+#footer_bar a:hover {
+	color: #ffff66;
+  	font-size: 17px;
+}

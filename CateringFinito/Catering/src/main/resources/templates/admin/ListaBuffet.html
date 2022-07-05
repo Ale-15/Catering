@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Catering</title>
+<link href="/css/ListaBuffetAdmin.css" rel="stylesheet" type="text/css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+<script></script>
+</head>
+<body>
+	<h3> I nostri buffet (admin)</h3>
+    <div id = "centraleGenerale">
+      <div class = "parteSinistra">
+          <div>
+		  	<img src="https://media-assets.lacucinaitaliana.it/photos/61fa679af9bff304ce3ea1db/16:9/w_1280,c_limit/iStock-614032520.jpg" class = "imm1"/>	
+      	  </div>
+      	  <div>
+        	<img src="/images/SecondaFotoListaBuffet.jpg" class = "imm2"/>
+      	  </div>
+ 		  <div>
+        	<img src="https://media-assets.lacucinaitaliana.it/photos/61fa679af9bff304ce3ea1db/16:9/w_1280,c_limit/iStock-614032520.jpg" class = "imm3"/>
+      	  </div>
+       	  <div>
+        	<img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2020/06/servire-aperitivo-790x500.jpg" class = "imm4"/>
+      	  </div>
+      	  <div>
+        	<img src="https://magazine.lorenzovinci.it/wp-content/uploads/2017/09/copertina21.jpg" class = "imm5"/>
+      	  </div>
+      </div>
+	  <div class = "listaCompleta">
+        <ul>
+            <li th:each="buffet : ${ListaBuffet}">
+              	<span class = "nomeBuffet"><a href="admin/Buffet.html" th:href="@{'/admin/buffet' + '/' + 	${buffet.id}}" 
+                 th:text="${buffet.nome}">Nome buffet</a>
+               	</span>
+              	<span class="elimina">
+              		<a th:href="@{'/admin/cancellaBuffet' + '/' + ${buffet.id}}">Elimina</a>
+              	</span>
+            </li>
+        </ul>
+      </div>
+      <div class = "parteDestra">
+         <div>
+		  <img src="https://media-assets.lacucinaitaliana.it/photos/61fa679af9bff304ce3ea1db/16:9/w_1280,c_limit/iStock-614032520.jpg" class = "imm6"/>	
+      	  </div>
+      	  <div>
+        	<img src="/images/SecondaFotoListaBuffet.jpg" class = "imm7"/>
+      	  </div> 
+      	  <div>
+        	<img src="https://media-assets.lacucinaitaliana.it/photos/61fa679af9bff304ce3ea1db/16:9/w_1280,c_limit/iStock-614032520.jpg" class = "imm8"/>
+     	  </div>
+      	  <div>
+        	<img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2020/06/servire-aperitivo-790x500.jpg" class = "imm9"/>
+      	  </div>
+      	  <div>
+        	<img src="https://magazine.lorenzovinci.it/wp-content/uploads/2017/09/copertina21.jpg" class = "imm10"/>
+      	  </div>
+      	</div>
+  	</div>
+    <div id="footer_bar">
+         	<a th:href="@{/admin/tornaHome}">Torna alla home</a>
+    </div>
+</body>
+</html>

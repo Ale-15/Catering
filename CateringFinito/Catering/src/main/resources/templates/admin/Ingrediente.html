@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Catering</title>
+	<link href="/css/Ingrediente.css" rel="stylesheet" type="text/css">
+	<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+</head>
+<body>
+  <h1>Ingrediente</h1>
+    <div id = "tutto">
+        <div id = "ingrediente" th:if="${ingrediente}" th:object="${ingrediente}">
+          <h2><em>Ingrediente</em></h2>
+          <div id = "divisore"></div>
+            Nome:<span th:text="*{nome}">nome </span><br>
+            Origine:<span th:text="*{origine}">origine </span><br>
+            Descrizione:<span th:text="*{descrizione}">descrizione </span>
+           </div>  
+        <div th:unless="${ingrediente}">Questo ingrediente non esiste</div>
+    </div>
+     <div id = "footer_bar">
+			<a th:href="@{/admin/tornaHome}">
+		  		Torna alla home</a>
+      </div>
+</body>
+</html>

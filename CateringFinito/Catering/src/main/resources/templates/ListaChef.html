@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Catering</title>
+<link href="/css/ListaChef.css" rel="stylesheet" type="text/css">
+<style></style>
+<script></script>
+</head>
+<body>
+	<h3> I nostri chef (user)</h3>
+	 <div id = "centraleGenerale">
+      <div class = "parteSinistra">
+          <div>
+		  	<img src="https://redacademy.it/wp-content/uploads/2021/03/chef-de-partie-mansioni.jpg" class = "imm1"/>	
+      	  </div>
+      	  <div>
+        	<img src="https://wips.plug.it/cips/initalia.virgilio.it/cms/2020/09/chef.jpg?w=800&h=450&a=c" class = "imm2"/>
+      	  </div>
+ 		  <div>
+        	<img src="https://www.lavorareturismo.it/wp-content/uploads/2016/09/Chef.jpg" class = "imm3"/>
+      	  </div>
+       	  <div>
+        	<img src="https://www.cronoshare.com/blog/wp-content/uploads/2017/04/d%C3%ADa-de-la-madre3.png" class = "imm4"/>
+      	  </div>
+      </div>
+	  <div class = "listaCompleta">
+        <ul>
+            <li th:each="chef : ${ListaChef}">
+                <a class = "link" href="Chef.html" th:href="@{'/chef' + '/' + ${chef.id}}" 
+                   th:text="${chef.nome}">Nome chef</a>
+            </li>
+        </ul>
+    </div>
+    <div class = "parteDestra">
+         <div>
+		  <img src="https://redacademy.it/wp-content/uploads/2021/03/chef-de-partie-mansioni.jpg" class = "imm5"/>	
+      	  </div>
+      	  <div>
+        	<img src="https://wips.plug.it/cips/initalia.virgilio.it/cms/2020/09/chef.jpg?w=800&h=450&a=c" class = "imm6"/>
+      	  </div> 
+      	  <div>
+        	<img src="https://www.lavorareturismo.it/wp-content/uploads/2016/09/Chef.jpg" class = "imm7"/>
+     	  </div>
+      	  <div>
+        	<img src="https://www.cronoshare.com/blog/wp-content/uploads/2017/04/d%C3%ADa-de-la-madre3.png" class = "imm8"/>
+      	  </div>
+      	</div>
+  	</div>
+    <div id="footer_bar">
+         	<a th:href="@{/tornaHome}">Torna alla home</a>
+    </div>
+</body>
+</html>

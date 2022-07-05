@@ -1,0 +1,95 @@
+body{
+  background-image: url(/images/Sfondo.png);
+  background-size: 47%;
+}
+
+#box-background{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 550px;
+}
+
+#box-login{
+  display: flex;
+  height: 300px;
+  width: 500px;
+  justify-content: space-between;
+}
+
+#box-benvenuto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: beige;
+  width: 50%;
+}
+
+.benvenuto{
+  font-size: 50px;
+  font-family: Brush Script MT;
+}
+
+.logo{
+  height: 100px;
+  width: 100px;
+}
+
+#box-checkbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  background: white;
+  width: 50%;
+}
+
+.registrazione{
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.checkNome{
+	margin-top: -10px;
+}
+
+.checkCognome{
+	margin-top: 5px;
+	
+}
+
+.checkUser{
+  margin-top: 5px;
+}
+
+.checkPassword{
+  margin-top: 5px;
+}
+
+.bottoneRegistrati{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+button{
+  border: 3px solid beige;
+  transition-duration: 0.4s;
+}
+
+button:hover{
+  background: beige;
+}
+
+a{
+  transition-duration: 0.5s;
+  border: 3px solid beige;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  background-color: beige;
+}

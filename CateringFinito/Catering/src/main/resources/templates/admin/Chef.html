@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Catering</title>	
+	<link href="/css/Chef.css" rel="stylesheet" type="text/css">
+	<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+</head>
+<body>
+  <h1>Lo chef</h1>
+    <div id = "tutto">
+        <div id = "chef" th:if="${chef}" th:object="${chef}">
+          <h2><em>Chef</em></h2>
+          <div id = "divisore"></div>
+            Nome:<span th:text="*{nome}">nome </span><br>
+            Cognome:<span th:text="*{cognome}">cognome </span><br>
+            Nazionalita:<span th:text="*{nazionalita}">nazionalita </span><br>
+           </div>  
+        <div th:unless="${chef}">Questo chef non esiste</div>
+    </div>
+    <div id = "footer_bar">
+			<a th:href="@{/admin/tornaHome}">
+		  		Torna alla home</a>
+      </div>
+</body>
+</html>

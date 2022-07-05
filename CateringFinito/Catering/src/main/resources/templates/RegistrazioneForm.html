@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta name = "viewport" content = "widht=device-widht, initial-scale=1">
+    <title>Catering</title>
+    <link href="css/registrazione.css" rel="stylesheet" type="text/css">
+    <style></style>
+    <script></script>
+  </head>
+  <body>
+    <div id = box-background>
+     <div id = box-login>
+       <div id = box-benvenuto> 
+       	 <span class = benvenuto>
+         	Benvenuto
+       	 </span>
+         <img src = "https://img.myloview.it/carta-da-parati/line-art-catering-logo-design-vector-template-catering-logo-with-cookingcatering-equipment-spoon-and-fork-icon-tent-icon-table-icon-and-stove-icon-concept-design-700-186719179.jpg" class = logo>
+      </div>
+       <div id = box-checkbox>
+         <span class = registrazione>
+           Registrati
+         </span>
+         <form th:action="@{/register}" method="post">
+         	<div class = checkNome>
+            	<input type="text" placeholder="nome" th:field="${Utente.nome}" required/>
+            	<div th:if = "${#fields.hasErrors('Utente.nome')}" th:errors = "${Utente.nome}"></div>	
+         	</div>
+         	<div class = checkCognome>
+            	<input type="text" placeholder="cognome" th:field="${Utente.cognome}" required/>
+            	<div th:if = "${#fields.hasErrors('Utente.cognome')}" th:errors = "${Utente.cognome}"></div>
+         	</div>
+         	<div class = checkUser>
+            	<input type="text" placeholder="username" th:field="${Credenziali.username}" required/>
+            	<div th:if = "${#fields.hasErrors('Credenziali.username')}" th:errors = "${Credenziali.username}"></div>
+         	</div>
+         	<div class = checkPassword>
+            	<input type="password" placeholder="password" th:field="${Credenziali.password}" required/>
+            	<div th:if = "${#fields.hasErrors('Credenziali.password')}" th:errors = "${Credenziali.password}"></div>
+         	</div>
+         	<div class = bottoneRegistrati>
+            	<button type = "submit">Registrati</button>
+         	</div>
+         </form>
+       	</div>
+      </div>
+     </div>
+  </body>
+</html>

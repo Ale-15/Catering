@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Catering</title>
+<link href="/css/ListaPiattiAdmin.css" rel="stylesheet" type="text/css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Smooch&family=Varela+Round&display=swap');</style>
+<script></script>
+</head>
+<body>
+	<h3> I nostri piatti (admin)</h3>
+	<div id = "centraleGenerale">
+      <div class = "parteSinistra">
+          <div>
+		  	<img src="https://www.ricetteperbimby.it/app-articoli/uploads/30-buffet-bicchieri.jpg" class = "imm1"/>	
+      	  </div>
+      	  <div>
+        	<img src="https://media-assets.lacucinaitaliana.it/photos/61fa988b88beebce25c095cc/16:9/w_2560%2Cc_limit/roma-buffet-aperitivo-locale.jpg" class = "imm2"/>
+      	  </div>
+ 		  <div>
+        	<img src="https://primochef.it/wp-content/uploads/2019/12/SH_tartine_al_salmone.jpg.webp" class = "imm3"/>
+      	  </div>
+       	  <div>
+        	<img src="https://www.melarossa.it/wp-content/uploads/2014/12/bicchierini-ricette-da-mangiare-in-piedi-party.jpg" class = "imm4"/>
+      	  </div>
+      </div>
+	  <div class = "listaCompleta">
+        <ul>
+            <li th:each="piatto : ${ListaPiatti}">
+                <span class = "nomePiatto"><a href="admin/Piatto.html" th:href="@{'/admin/piatto' + '/' + ${piatto.id}}" 
+                   th:text="${piatto.nome}">Nome piatto</a>
+                </span>
+                <span class = "elimina">
+               		<a th:href="@{'/admin/eliminaPiatto' + '/' + ${piatto.id}}">Elimina</a>
+               	 </span>
+            </li>
+        </ul>
+       </div>
+     	<div class = "parteDestra">
+         	<div>
+		  		<img src="https://www.ricetteperbimby.it/app-articoli/uploads/30-buffet-bicchieri.jpg" class = "imm5"/>	
+      	  	</div>
+      	  	<div>
+        		<img src="https://media-assets.lacucinaitaliana.it/photos/61fa988b88beebce25c095cc/16:9/w_2560%2Cc_limit/roma-buffet-aperitivo-locale.jpg" class = "imm6"/>
+      	  	</div> 
+      	  	<div>
+        		<img src="https://primochef.it/wp-content/uploads/2019/12/SH_tartine_al_salmone.jpg.webp" class = "imm7"/>
+     	  	</div>
+      	  	<div>
+        		<img src="https://www.melarossa.it/wp-content/uploads/2014/12/bicchierini-ricette-da-mangiare-in-piedi-party.jpg" class = "imm8"/>
+      	  	</div>
+      	</div>
+  	</div>
+    <div id="footer_bar">
+         	<a th:href="@{/admin/tornaHome}">Torna alla home</a>
+    </div>
+</body>
+</html>
